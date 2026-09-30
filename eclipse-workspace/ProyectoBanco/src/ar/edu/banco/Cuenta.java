@@ -35,8 +35,12 @@ public abstract class  Cuenta {
 		this.saldo = saldo;
 	}
 	
-	public void depositar(Double saldo) {
-		this.saldo+=saldo;
+	public boolean depositar(Double saldo) {
+		if(saldo>0) {
+			this.saldo+=saldo;
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean extraer(double importe) {
